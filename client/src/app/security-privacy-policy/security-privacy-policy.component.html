@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Security and Privacy Policies</h1>
+  <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+  <div *ngFor="let policy of policies">
+    <h3>{{policy._id}}</h3>
+    <p>Introduction: {{policy.introduction}}</p>
+    <p>Scope: {{policy.scope}}</p>
+    <p>Data Collection: {{policy.data_collection}}</p>
+    <p>Data Use: {{policy.data_use}}</p>
+    <p>Data Security: {{policy.data_security}}</p>
+    <p>Data Access Rights: {{policy.data_access_rights}}</p>
+    <p>Changes to Policy: {{policy.changes_to_policy}}</p>
+    <p>Contact Information: {{policy.contact_information}}</p>
+    <p>Date: {{policy.date}}</p>
+  </div>
+</div>
+
+<a routerLink="/security-privacy-policy">Security Privacy Policy</a>
+<a routerLink="/dmca-notice-takedown-policy">DMCA Notice And Takedown Policy</a>
+<a routerLink="/acceptable-use-policy">Acceptable Use Policy</a>

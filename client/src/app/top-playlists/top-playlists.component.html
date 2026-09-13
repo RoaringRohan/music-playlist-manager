@@ -1,0 +1,28 @@
+<div class="top-playlists">
+  <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+  <ul>
+    <li *ngFor="let playlist of playlists" (click)="toggleExpand(playlist)">
+      <div class="playlist-info">
+        <h3>{{playlist.playlist_name}}</h3>
+        <p>Creator: {{playlist.creator_username}}</p>
+        <p>Number of Tracks: {{playlist.number_of_tracks}}</p>
+        <p>Total Play Time: {{playlist.total_play_time}}</p>
+        <p>Average Rating: {{playlist.average_rating}}</p>
+      </div>
+      <div *ngIf="playlist.expanded" class="expanded-info">
+        <p>Description: {{playlist.description}}</p>
+        <p>Tracks:</p>
+        <ul>
+          <li *ngFor="let track of playlist.listOfTracks">
+            {{track.track_title}} by {{track.artist_name}}
+            <a href="{{track.youtube_search_url}}" target="_blank">Open in YouTube</a>
+          </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<a routerLink="/security-privacy-policy">Security Privacy Policy</a>
+<a routerLink="/dmca-notice-takedown-policy">DMCA Notice And Takedown Policy</a>
+<a routerLink="/acceptable-use-policy">Acceptable Use Policy</a>

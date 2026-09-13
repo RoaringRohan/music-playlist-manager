@@ -1,0 +1,26 @@
+<form (submit)="onSubmit()">
+  <label>
+    Playlist Name:
+    <input type="text" [(ngModel)]="playlistName" name="playlistName" required>
+  </label>
+  <br>
+  <label>
+    Playlist Owner:
+    <input type="text" [(ngModel)]="playlistOwner" name="playlistOwner" required>
+  </label>
+  <br>
+  <label>
+    Rating (out of 5):
+    <input type="number" [(ngModel)]="rating" name="rating" min="1" max="5" required>
+  </label>
+  <br>
+  <label>
+    Comment:
+    <textarea [(ngModel)]="comment" name="comment"></textarea>
+  </label>
+  <br>
+  <button type="submit">Submit</button>
+</form>
+
+<div *ngIf="errorMessage">{{ errorMessage }}</div>
+<div *ngIf="message">{{ message }}</div>

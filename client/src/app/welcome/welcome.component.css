@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "Poppins";
+  src: url(../../assets/Poppins-SemiBoldItalic.ttf) format('truetype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Poppins;
+}
+
+h1 {
+  color: blue;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+.policy {
+  width: 100%;
+  padding: 5%;
+  bottom: 0;
+  }
+
+button {
+  margin: auto;
+  padding: 10px 10px;
+}

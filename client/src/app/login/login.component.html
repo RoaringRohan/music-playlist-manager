@@ -1,0 +1,28 @@
+<h1>Login</h1>
+<form (submit)="login()">
+  <label>
+    Email:
+    <input type="email" [(ngModel)]="email" name="email">
+  </label>
+  <br>
+  <label>
+    Password:
+    <input type="password" [(ngModel)]="password" name="password">
+  </label>
+  <br>
+  <button type="submit">Sign In</button>
+</form>
+
+<button (click)="goToSignup()">Create an Account</button>
+
+<div *ngIf="errorMessage" class="error-message">
+  {{ errorMessage }}
+</div>
+
+<br>
+<br>
+<br>
+
+<a routerLink="/security-privacy-policy">Security Privacy Policy</a>
+<a routerLink="/dmca-notice-takedown-policy">DMCA Notice And Takedown Policy</a>
+<a routerLink="/acceptable-use-policy">Acceptable Use Policy</a>

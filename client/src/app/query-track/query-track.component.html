@@ -1,0 +1,36 @@
+<div class="query-track">
+  <form (ngSubmit)="onSubmit()">
+    <label for="artistName">Artist Name</label>
+    <input type="text" id="artistName" name="artistName" [(ngModel)]="artistName" required>
+    <br>
+    <label for="trackGenre">Track Genre</label>
+    <input type="text" id="trackGenre" name="trackGenre" [(ngModel)]="trackGenre" required>
+    <br>
+    <label for="trackTitle">Track Title</label>
+    <input type="text" id="trackTitle" name="trackTitle" [(ngModel)]="trackTitle" required>
+    <br>
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+  <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+  <ul>
+    <li *ngFor="let track of tracks" (click)="toggleExpand(track)">
+      <div class="track-info">
+        <h3>{{track.track_title}}</h3>
+        <p>Artist: {{track.artist_name}}</p>
+        <p>Genres:
+          <span *ngFor="let genre of track.track_genres">{{genre.genre_title}}</span>
+        </p>
+      </div>
+      <div *ngIf="track.expanded" class="expanded-info">
+        <p>Album: {{track.album_title}}</p>
+        <p>Duration: {{track.track_duration}}</p>
+        <p>Date Created: {{track.track_date_created}}</p>
+      </div>
+      <a href="{{track.youtube_search_url}}" target="_blank" class="btn btn-secondary">Open in YouTube</a>
+    </li>
+  </ul>
+</div>
+
+<a routerLink="/security-privacy-policy">Security Privacy Policy</a>
+<a routerLink="/dmca-notice-takedown-policy">DMCA Notice And Takedown Policy</a>
+<a routerLink="/acceptable-use-policy">Acceptable Use Policy</a>

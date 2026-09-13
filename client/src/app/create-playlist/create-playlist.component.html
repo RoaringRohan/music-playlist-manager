@@ -1,0 +1,13 @@
+<div class="create-playlist">
+  <form (ngSubmit)="onSubmit()">
+    <label for="playlistName">Playlist Name</label>
+    <input type="text" id="playlistName" name="playlistName" [(ngModel)]="playlistName" required>
+    <br>
+    <label for="description">Description (Optional)</label>
+    <input type="text" id="description" name="description" [(ngModel)]="description">
+    <br>
+    <button type="submit" class="btn btn-primary">Create Playlist</button>
+  </form>
+  <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+  <div *ngIf="message" class="alert alert-success">{{message}}</div>
+</div>
